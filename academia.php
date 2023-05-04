@@ -1,8 +1,8 @@
 <?php
 	//***********************************************************************************************
-	// AUTOR: Ricardo Erick Rebêlo
-	// Objetivo: classe de conexão com o banco de dados da academia
-	// Alterações:
+	// AUTOR: Ricardo Erick RebÃªlo
+	// Objetivo: classe de conexÃ£o com o banco de dados da academia
+	// AlteraÃ§Ãµes:
 	// 01    03/05/2023 - consultaExercicios
 
 	//***********************************************************************************************
@@ -12,16 +12,16 @@
 	{
 		public $conexao;
 
-		public $hostname = "sql206.epizy.com";
-		public $database = "epiz_33999511_academia";
-		public $username = "epiz_33999511";
-		public $password = "lns2018WvpgLI";
+		public $hostname = "";
+		public $database = "";
+		public $username = "";
+		public $password = "";
 
 		function __construct()
 		{
 			$this->conexao = new mysqli( $this->hostname, $this->username, $this->password, $this->database);
 
-			// Checa se a conexão teve sucesso
+			// Checa se a conexÃ£o teve sucesso
 			if ( $this->conexao->connect_errno)
 			{
 			    die( "Falha ao conectar: (" . $this->conexao->connect_errno . ") " . $this->conexao->connect_error);
@@ -32,7 +32,7 @@
 		{
 			$this->conexao->close();
 
-			// Checa se a desconexão teve sucesso
+			// Checa se a desconexÃ£o teve sucesso
 			if ( $this->conexao->errno)
 			{
 			    die( "Falha ao desconectar: (" . $this->conexao->errno . ") " . $this->conexao->error);
