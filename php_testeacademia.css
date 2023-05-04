@@ -17,7 +17,7 @@ p{
 	padding: 0px 0px 0px 0px;
 	font-weight:bold;
 	background-color: blue;
-	width: 605px;
+	width: 355px;
 }
 #gride
 {
@@ -26,14 +26,19 @@ p{
 	margin: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	font-weight:normal;
-	width: 605px;
+	width: 355px;
 }
 #linha:nth-child( even)
 {
 	background-color: lightblue;
 }
-#coluna
+#coluna1
 {
 	display: inline-block;
-	width: 300px;
+	width: 250px;
+}
+#coluna2
+{
+	display: inline-block;
+	width: 100px;
 }
