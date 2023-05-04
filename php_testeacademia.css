@@ -1,0 +1,33 @@
+h1{
+	font-size: 18px;
+	font-family: Verdana, Arial, sans-serif;	
+}
+#cabecalho
+{
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+	color: white;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-weight:bold;
+	background-color: blue;
+	width: 605px;
+}
+#gride
+{
+	font-size: 12px;
+	font-family: Verdana, Arial, sans-serif;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-weight:normal;
+	width: 605px;
+}
+#linha:nth-child( even)
+{
+	background-color: lightblue;
+}
+#coluna
+{
+	display: inline-block;
+	width: 300px;
+}
