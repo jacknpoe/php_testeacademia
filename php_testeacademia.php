@@ -18,23 +18,24 @@
 
 			while ( $coluna = $tabela->fetch_assoc())
 			{
-				$resultado .= '<div id="linha"><div id="coluna">';
+				$resultado .= '<div id="linha"><div id="coluna1">';
 				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1");
-				$resultado .= '</div><div id="coluna">';
+				$resultado .= '</div><div id="coluna2">';
 				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "ISO-8859-1");
 				$resultado .= '</div></div>';
 			}
 
 			$tabela->free_result();
-			$tabela->close();
+//			$tabela->close();
 		?>
 		<h1>Teste da classe academia</h1>
 
 		<br>
 		<div id="cabecalho">
-			<div id="coluna">Exercício</div>
-			<div id="coluna">Grupo</div>
+			<div id="coluna1">Exercício</div>
+			<div id="coluna2">Grupo</div>
 		</div>
+
 		<div id="gride">
 			<?php echo $resultado; ?>
 		</div>
