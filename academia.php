@@ -5,6 +5,7 @@
 	// Alterações:
 	// 0.1   03/05/2023 - consultaExercicios
 	// 1.0   03/05/2023 - primeira publicação
+	// 1.1   03/05/2023 - primeira publicação com o namespace corrigido
 
 	//***********************************************************************************************
 	// Classe academia
