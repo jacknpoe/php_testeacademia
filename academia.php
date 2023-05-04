@@ -1,27 +1,26 @@
 <?php
 	//***********************************************************************************************
-	// AUTOR: Ricardo Erick RebÃªlo
-	// Objetivo: classe de conexÃ£o com o banco de dados da academia
-	// AlteraÃ§Ãµes:
-	// 01    03/05/2023 - consultaExercicios
+	// AUTOR: Ricardo Erick Rebêlo
+	// Objetivo: classe de conexão com o banco de dados da academia
+	// Alterações:
+	// 0.1   03/05/2023 - consultaExercicios
+	// 1.0   03/05/2023 - primeira publicação
 
 	//***********************************************************************************************
 	// Classe academia
+
+	namespace jacknpoe;
 
 	class academia
 	{
 		public $conexao;
 
-		public $hostname = "";
-		public $database = "";
-		public $username = "";
-		public $password = "";
-
 		function __construct()
 		{
-			$this->conexao = new mysqli( $this->hostname, $this->username, $this->password, $this->database);
+			require_once( 'connect.php');
+			$this->conexao = new \mysqli( $hostname, $username, $password, $database);
 
-			// Checa se a conexÃ£o teve sucesso
+			// Checa se a conexão teve sucesso
 			if ( $this->conexao->connect_errno)
 			{
 			    die( "Falha ao conectar: (" . $this->conexao->connect_errno . ") " . $this->conexao->connect_error);
@@ -32,7 +31,7 @@
 		{
 			$this->conexao->close();
 
-			// Checa se a desconexÃ£o teve sucesso
+			// Checa se a desconexão teve sucesso
 			if ( $this->conexao->errno)
 			{
 			    die( "Falha ao desconectar: (" . $this->conexao->errno . ") " . $this->conexao->error);

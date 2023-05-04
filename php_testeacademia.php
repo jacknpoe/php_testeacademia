@@ -11,7 +11,7 @@
 			header( "Content-Type: text/html; charset=ISO-8859-1", true);
 
 			require_once( 'academia.php');
-			$classe_academia = new academia();
+			$classe_academia = new \jacknpoe\academia();
 			$tabela = $classe_academia->consultaExercicios();
 
 			$resultado = '';
