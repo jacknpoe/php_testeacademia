@@ -38,7 +38,7 @@
 		<h1>Teste da classe academia</h1>
 
 		<form action="php_testeacademia.php" method="POST" style="border: 0px">
-			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES); ?>"></p>
+			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES); ?>" autofocus></p>
 			<p><input type="submit" name="pesquisar" value="Pesquisar"></p>
 		</form>
 
