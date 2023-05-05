@@ -6,6 +6,7 @@
 	// 0.1   03/05/2023 - consultaExercicios
 	// 1.0   03/05/2023 - primeira publicação
 	// 1.1   03/05/2023 - primeira publicação com o namespace corrigido
+	// 1.2   04/05/2023 - corrigida diferença entre servidores com arquivo de configuração
 
 	//***********************************************************************************************
 	// Classe academia
@@ -43,9 +44,11 @@
 			} */
 		}
 
-		function consultaExercicios()
+		function consultaExercicios( $valor = "")
 		{
-			$resultado = $this->conexao->query( "SELECT exercicio.NM_EXERCICIO, grupo.NM_GRUPO FROM exercicio INNER JOIN grupo ON exercicio.CD_GRUPO = grupo.CD_GRUPO ORDER BY exercicio.NM_EXERCICIO");
+			$valor = "'%" . str_replace( "'", "\'", str_replace( '\\', '\\\\', $valor)) . "%'";
+
+			$resultado = $this->conexao->query( "SELECT exercicio.NM_EXERCICIO, grupo.NM_GRUPO FROM exercicio INNER JOIN grupo ON exercicio.CD_GRUPO = grupo.CD_GRUPO WHERE UPPER( exercicio.NM_EXERCICIO) LIKE " . $valor . " OR UPPER( grupo.NM_GRUPO) LIKE " . $valor . " ORDER BY exercicio.NM_EXERCICIO");
 
 			// Checa se a query teve sucesso
 			if ( $this->conexao->errno)

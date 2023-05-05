@@ -12,11 +12,16 @@
 			$cabecalho = "Content-Type: text/html; charset=" . $caracter;
 			header( $cabecalho, true);
 
+			$resultado = '';
+			$valor = '';
+
+			if( isset( $_POST[ 'pesquisar']))
+			{
+				$valor = $_POST["valor"];
+			}
 			require_once( 'academia.php');
 			$classe_academia = new \jacknpoe\academia();
-			$tabela = $classe_academia->consultaExercicios();
-
-			$resultado = '';
+			$tabela = $classe_academia->consultaExercicios( $valor);
 
 			while ( $coluna = $tabela->fetch_assoc())
 			{
@@ -32,9 +37,14 @@
 		?>
 		<h1>Teste da classe academia</h1>
 
+		<form action="php_testeacademia.php" method="POST" style="border: 0px">
+			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, $caracter); ?>"></p>
+			<p><input type="submit" name="pesquisar" value="Pesquisar"></p>
+		</form>
+
 		<br>
 		<div id="cabecalho">
-			<div id="coluna1">Exercício</div>
+			<div id="coluna1">Exerc&iacute;cio</div>
 			<div id="coluna2">Grupo</div>
 		</div>
 
