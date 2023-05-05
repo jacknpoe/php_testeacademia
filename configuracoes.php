@@ -1,5 +1,5 @@
 <?php
 # FileName="configuracoes.php"
-//$caracter = "ISO-8859-1";
-$caracter = "UTF-8";
+//define( 'CARACTERES', 'ISO-8859-1');	// para funcionar remotamente
+define( 'CARACTERES', 'UTF-8');	// para funcionar localmente
 ?>
