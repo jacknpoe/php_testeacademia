@@ -9,7 +9,7 @@
 	<body>
 		<?php
 			require_once( 'configuracoes.php');
-			$cabecalho = "Content-Type: text/html; charset=" . $caracter;
+			$cabecalho = "Content-Type: text/html; charset=" . CARACTERES;
 			header( $cabecalho, true);
 
 			$resultado = '';
@@ -26,9 +26,9 @@
 			while ( $coluna = $tabela->fetch_assoc())
 			{
 				$resultado .= '<div id="linha"><div id="coluna1">';
-				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, $caracter);
+				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
 				$resultado .= '</div><div id="coluna2">';
-				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, $caracter);
+				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
 				$resultado .= '</div></div>';
 			}
 
@@ -38,7 +38,7 @@
 		<h1>Teste da classe academia</h1>
 
 		<form action="php_testeacademia.php" method="POST" style="border: 0px">
-			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, $caracter); ?>"></p>
+			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES); ?>"></p>
 			<p><input type="submit" name="pesquisar" value="Pesquisar"></p>
 		</form>
 

@@ -14,7 +14,7 @@
 	namespace jacknpoe;
 
 	require_once( 'configuracoes.php');
-	$cabecalho = "Content-Type: text/html; charset=" . $caracter;
+	$cabecalho = "Content-Type: text/html; charset=" . CARACTERES;
 	header( $cabecalho, true);
 
 	class academia
