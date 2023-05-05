@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<?php
-			header( "Content-Type: text/html; charset=UTF-8", true);
+			require_once( 'configuracoes.php');
+			$cabecalho = "Content-Type: text/html; charset=" . $caracter;
+			header( $cabecalho, true);
 
 			require_once( 'academia.php');
 			$classe_academia = new \jacknpoe\academia();
@@ -19,9 +21,9 @@
 			while ( $coluna = $tabela->fetch_assoc())
 			{
 				$resultado .= '<div id="linha"><div id="coluna1">';
-				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "UTF-8");
+				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, $caracter);
 				$resultado .= '</div><div id="coluna2">';
-				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "UTF-8");
+				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, $caracter);
 				$resultado .= '</div></div>';
 			}
 
@@ -32,7 +34,7 @@
 
 		<br>
 		<div id="cabecalho">
-			<div id="coluna1">Exercício</div>
+			<div id="coluna1">Exerc�cio</div>
 			<div id="coluna2">Grupo</div>
 		</div>
 
@@ -41,7 +43,7 @@
 		</div>
 
 		<br>
-		<p><a href="https://github.com/jacknpoe/php_testeacademia">Repositório no GitHub</a></p><br>
+		<p><a href="https://github.com/jacknpoe/php_testeacademia">Reposit&oacute;rio no GitHub</a></p><br>
 		<form action="index.html" method="POST" style="border: 0px">
 			<p><input type="submit" name="voltar" value="Voltar"></p>
 		</form>

@@ -1,16 +1,20 @@
 <?php
 	//***********************************************************************************************
-	// AUTOR: Ricardo Erick RebÃªlo
-	// Objetivo: classe de conexÃ£o com o banco de dados da academia
-	// AlteraÃ§Ãµes:
+	// AUTOR: Ricardo Erick Rebêlo
+	// Objetivo: classe de conexão com o banco de dados da academia
+	// Alterações:
 	// 0.1   03/05/2023 - consultaExercicios
-	// 1.0   03/05/2023 - primeira publicaÃ§Ã£o
-	// 1.1   03/05/2023 - primeira publicaÃ§Ã£o com o namespace corrigido
+	// 1.0   03/05/2023 - primeira publicação
+	// 1.1   03/05/2023 - primeira publicação com o namespace corrigido
 
 	//***********************************************************************************************
 	// Classe academia
 
 	namespace jacknpoe;
+
+	require_once( 'configuracoes.php');
+	$cabecalho = "Content-Type: text/html; charset=" . $caracter;
+	header( $cabecalho, true);
 
 	class academia
 	{
@@ -21,7 +25,7 @@
 			require_once( 'connect.php');
 			$this->conexao = new \mysqli( $hostname, $username, $password, $database);
 
-			// Checa se a conexÃ£o teve sucesso
+			// Checa se a conexão teve sucesso
 			if ( $this->conexao->connect_errno)
 			{
 			    die( "Falha ao conectar: (" . $this->conexao->connect_errno . ") " . $this->conexao->connect_error);
@@ -32,7 +36,7 @@
 		{
 			$this->conexao->close();
 
-			// Checa se a desconexÃ£o teve sucesso
+			// Checa se a desconexão teve sucesso
 /*			if ( $this->conexao->errno)
 			{
 			    die( "Falha ao desconectar: (" . $this->conexao->errno . ") " . $this->conexao->error);
