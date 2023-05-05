@@ -7,7 +7,8 @@
 	// 1.0   03/05/2023 - primeira publicação
 	// 1.1   03/05/2023 - primeira publicação com o namespace corrigido
 	// 1.2   04/05/2023 - corrigida diferença entre servidores com arquivo de configuração
-	// 1.3   05/05/2023 - arquivo de configuração agora tem uma constante no lugar de variável
+	// 1.3   05/05/2023 - adicionado parâmetro para pesquisa
+	// 1.4   05/05/2023 - arquivo de configuração agora tem uma constante no lugar de variável
 
 	//***********************************************************************************************
 	// Classe academia
