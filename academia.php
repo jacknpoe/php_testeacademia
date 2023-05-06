@@ -9,6 +9,7 @@
 	// 1.2   04/05/2023 - corrigida diferença entre servidores com arquivo de configuração
 	// 1.3   05/05/2023 - adicionado parâmetro para pesquisa
 	// 1.4   05/05/2023 - arquivo de configuração agora tem uma constante no lugar de variável
+	// 1.5   05/05/2023 - incluiAlunos
 
 	//***********************************************************************************************
 	// Classe academia
@@ -56,6 +57,31 @@
 			if ( $this->conexao->errno)
 			{
 			    die( "Falha ao consultar: (" . $this->conexao->errno . ") " . $this->conexao->error);
+			}
+
+			return $resultado;
+		}
+
+		function incluiAlunos( $valor = "")
+		{
+			$valor = str_replace( "'", "\'", str_replace( '\\', '\\\\', $valor));
+
+			// procura por um nome já existente (pra evitar duplicação por F5)
+			$resultado = $this->conexao->query( "SELECT aluno.CD_ALUNO FROM aluno WHERE aluno.NM_ALUNO = '" . $valor . "';");
+
+			$coluna = $resultado->fetch_assoc();	// coluna não será nula se achar um nome
+
+			if( $coluna)	// se achou um nome,
+			{
+				return false;	// retorna falso
+			}
+
+			$resultado = $this->conexao->query( "INSERT INTO `aluno` (`CD_ALUNO`, `NM_ALUNO`) VALUES (NULL, '" . $valor . "');");
+
+			// Checa se a query teve sucesso
+			if ( $this->conexao->errno)
+			{
+			    die( "Falha ao inserir: (" . $this->conexao->errno . ") " . $this->conexao->error);
 			}
 
 			return $resultado;
