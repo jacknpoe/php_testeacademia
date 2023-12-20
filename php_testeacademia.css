@@ -42,3 +42,17 @@ p{
 	display: inline-block;
 	width: 100px;
 }
+@media (prefers-color-scheme: dark) { 
+  body{
+     color: #fff;
+     background-color: #111;
+  }
+	#linha:nth-child( even)
+	{
+		background-color: #116;
+	}  
+	#cabecalho
+	{
+		background-color: #113;
+	}
+}
