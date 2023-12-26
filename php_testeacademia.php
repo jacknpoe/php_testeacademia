@@ -9,8 +9,7 @@
 	<body>
 		<?php
 			require_once( 'configuracoes.php');
-			$cabecalho = "Content-Type: text/html; charset=" . CARACTERES;
-			header( $cabecalho, true);
+			header("Content-Type: text/html; charset=UTF-8", true);
 
 			$resultado = '';
 			$valor = '';
