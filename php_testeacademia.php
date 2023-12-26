@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<?php
-			require_once( 'configuracoes.php');
+//			require_once( 'configuracoes.php');
 			header("Content-Type: text/html; charset=UTF-8", true);
 
 			$resultado = '';
@@ -25,9 +25,9 @@
 			while ( $coluna = $tabela->fetch_assoc())
 			{
 				$resultado .= '<div id="linha"><div id="coluna1">';
-				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
+				$resultado .= htmlspecialchars( $coluna[ "NM_EXERCICIO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "UTF-8");
 				$resultado .= '</div><div id="coluna2">';
-				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES);
+				$resultado .= htmlspecialchars( $coluna[ "NM_GRUPO"], ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "UTF-8");
 				$resultado .= '</div></div>';
 			}
 
@@ -37,7 +37,7 @@
 		<h1>Teste da classe academia: Consultar exerc&iacute;cio</h1>
 
 		<form action="php_testeacademia.php" method="POST" style="border: 0px">
-			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, CARACTERES); ?>" autofocus></p>
+			<p>Valor: <input type="text" name="valor" style="width: 200px" value="<?php echo htmlspecialchars( $valor, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, "UTF-8"); ?>" autofocus></p>
 			<p><input type="submit" name="pesquisar" value="Pesquisar"></p>
 		</form>
 
